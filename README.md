@@ -2,6 +2,8 @@
 
 If you found this task it means we are looking for you!
 
+> Note: To clone this repository you will need [GIT-LFS](https://git-lfs.github.com/)
+
 ## Few simple steps
 
 1. Fork this repo
