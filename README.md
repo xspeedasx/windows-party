@@ -16,7 +16,7 @@ If you found this task it means we are looking for you!
 - Send authorization request (POST) to http://playground.tesonet.lt/v1/tokens to generate token with body: `{"username": "tesonet", "password": "partyanimal"}`. (Don't forget Content-Type)
 - Get servers list from http://playground.tesonet.lt/v1/servers. Add header to request: `Authorization: Bearer <token>`
 - Design should be recreated as closely as possible.
-- Use WPF, C# .NET 4.6.1
+- Use WPF, C# .NET 4.6.1 or later
 
 ## Few tips
 
