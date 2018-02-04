@@ -1,0 +1,37 @@
+﻿<UserControl x:Class="WpfTests.Views.LoginView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:WpfTests.Views"
+             
+             mc:Ignorable="d" 
+             d:DesignHeight="780" d:DesignWidth="1460">
+    <!--DataContext="{Binding DataContext, RelativeSource={RelativeSource AncestorType=Window}}"-->
+
+    <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="../Resources/bg.png" Opacity="0.2" Stretch="Fill" />
+        </Grid.Background>
+        <StackPanel VerticalAlignment="Center" >
+            <Image Source="../Resources/logo.png" Width="245" Margin="0,0,0,45"/>
+            <TextBlock x:Name="msgError" Text="Username or Password were incorrect" Foreground="Red" HorizontalAlignment="Center" Height="15">
+                <TextBlock.Style>
+                    <Style>
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding ShowingError}" Value="True">
+                                <Setter Property="UIElement.Visibility" Value="Visible" />
+                            </DataTrigger>
+                            <DataTrigger Binding="{Binding ShowingError}" Value="False">
+                                <Setter Property="UIElement.Visibility" Value="Hidden" />
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </TextBlock.Style>
+            </TextBlock>
+            <TextBox x:Name="tb" Template="{StaticResource RoundTextBox}" FontSize="16" VerticalContentAlignment="Center" Padding="49,0,0,0" Width="370" Margin="10" Height="56" Text="{Binding UserName}" Foreground="#999"  FontFamily="{StaticResource Roboto}" />
+            <PasswordBox Template="{StaticResource RoundPassBox}" FontSize="16" VerticalContentAlignment="Center" Padding="49,0,0,0" Width="370" Margin="10" Height="56" x:Name="PassBox" PasswordChanged="PassBox_PasswordChanged"  FontFamily="{StaticResource Roboto}" />
+            <Button Style="{StaticResource LoginButtonStyle}" Template="{StaticResource RoundLogin}" Width="370" Margin="10" Height="56" Content="Log In" Foreground="White" Command="{Binding LoginClick}" CommandParameter="{Binding ElementName=PassBox}"  FontFamily="{StaticResource Roboto}"></Button>
+        </StackPanel>
+    </Grid>
+</UserControl>
